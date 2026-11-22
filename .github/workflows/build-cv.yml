@@ -1,14 +1,12 @@
-# Builds the CV PDF from LaTeX on every push and publishes it as a fixed download link:
-# https://github.com/rozakter18/cv/releases/download/cv-latest/Roza_Akter_CV.pdf
 name: Build CV
 
 on:
   push:
     branches: [main]
-  workflow_dispatch:        # lets you run it by hand from the Actions tab
+  workflow_dispatch:        
 
 permissions:
-  contents: write           # needed to update the release
+  contents: write           
 
 jobs:
   build:
@@ -19,11 +17,11 @@ jobs:
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: main.tex          # change if your main file has another name
-          # latexmk_use_xelatex: true  # remove the # if your CV uses fontspec / XeLaTeX
+          root_file: main.tex          
+          # latexmk_use_xelatex: true  
 
       - name: Rename PDF
-        run: mv main.pdf Roza_Akter_CV.pdf   # match root_file name above (main.tex -> main.pdf)
+        run: mv main.pdf Roza_Akter_CV.pdf  
 
       - name: Publish latest CV
         uses: softprops/action-gh-release@v2
