@@ -1,0 +1,116 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage[margin=0.6in,top=0.5in,bottom=0.55in]{geometry}
+\usepackage{microtype,titlesec,enumitem,xcolor,tabularx,fancyhdr}
+\usepackage{needspace}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{HTML}{1F3A5F}
+\definecolor{link}{HTML}{1F4E9C}
+\newcommand{\lnk}[2]{\href{#1}{\textcolor{link}{#2}}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\footnotesize\color{gray}Roza Akter \textbar{} Page \thepage{} of 2}
+
+\titleformat{\section}{\large\bfseries\scshape\color{accent}}{}{0em}{}[\vspace{-6pt}\color{accent}\rule{\linewidth}{0.6pt}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+\setlist[itemize]{leftmargin=1.1em,itemsep=1pt,topsep=1pt,parsep=0pt,label=\textbullet}
+\setlength{\parindent}{0pt}
+\linespread{1.0}
+
+% \entry{Left bold}{Right}{Left italic}{Right italic}
+\newcommand{\entry}[4]{\textbf{#1}\hfill #2\\ \textit{#3}\hfill\textit{#4}\par}
+\newcommand{\proj}[3]{\needspace{4\baselineskip}\textbf{#1}\hfill #3\\ \textit{\small #2}\par}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{accent} Roza Akter}\\[4pt]
+\lnk{mailto:rozakterofficial18@gmail.com}{rozakterofficial18@gmail.com} \enspace|\enspace
+\lnk{https://www.linkedin.com/in/rozaakter/}{LinkedIn} \enspace|\enspace
+\lnk{https://github.com/rozakter18}{GitHub} \enspace|\enspace
+\lnk{https://orcid.org/0009-0007-3725-3633}{ORCID}
+\end{center}
+
+\section{Education}
+\entry{BRAC University, Dhaka, Bangladesh}{Jan 2023 -- Jan 2027 (expected)}{B.Sc.\ in Computer Science and Engineering}{}
+\begin{itemize}
+  \item \textbf{Relevant coursework:} Bioinformatics (CSE443), Neural Networks (CSE425), Artificial Intelligence (CSE422), Biological Signal and Image Analysis (CSE490F), Algorithms (CSE221), Data Structures (CSE220), Intro.\ to Biology (BIO101), Intro.\ to Biotechnology and Genetic Engineering (BTE101).
+\end{itemize}
+
+\section{Research Experience}
+\textbf{A Framework for Learning Transferable Representations Across Neurological Disorders}\\
+\textbf{Roza Akter}, Sifatul Karim \textbar{} \textit{Undergraduate thesis \textbar{} Supervisor: Dr.\ Swakkhar Shatabda}\hfill Fall 2025 -- Fall 2026 (ongoing)\par
+\begin{itemize}
+  \item \textbf{Evaluated cross-disease representation transfer between Alzheimer's disease (AD) and Parkinson's disease (PD)}, examining T1-weighted structural MRI, whole-blood transcriptomics and multimodal fusion architectures.
+  \item \textbf{Investigated whether models trained on one neurodegenerative disorder leverage shared biological mechanisms to enhance target classification} by systematizing a 4-condition transfer framework across matched ADNI/PPMI cohorts using frozen encoders, patient-disjoint 5-fold CV $\times$ 3 seeds, and paired bootstrap $\Delta$AUC testing.
+  \item \textbf{Diagnosed that cross-disease transfer fails to outperform target standalone models}, clarified that apparent transfer signals stem from non-disease confounds (ADNI scanner era, cell-composition shifts), and identified input feature scaling as the primary driver of early-fusion gains.
+\end{itemize}
+
+\vspace{3pt}\textbf{Contrastive ECG--Report Alignment on PTB-XL: Measuring the Gap Between Learned Representations and Prompt-Based Diagnosis}\\
+Tasbir Ahmed, \textbf{Roza Akter}\\
+\textit{AgIA4BioHealth Workshop, IEEE International Conference on Bioinformatics and Biomedicine (BIBM)}, 2026. \textbf{Accepted, to appear}; to be presented Dec 2026.\par
+\begin{itemize}
+  \item \textbf{Evaluated contrastive 12-lead ECG--language representations} (1D-CNN + Bio\_ClinicalBERT) on 21,799 records, examining prompt-based zero-shot diagnosis against linear probing on frozen embeddings.
+  \item \textbf{Investigated whether low zero-shot diagnostic scores stem from weak encoders or prompt misalignment} by systematizing a patient-disjoint 10-fold CV pipeline using standardized English pseudo-reports from 71 SCP descriptions to eliminate InfoNCE false-negative gradients.
+  \item \textbf{Diagnosed a 0.334 macro-AUPRC retrieval gap} (0.417 prompt vs.\ 0.751 probe), clarified that text prompts capture only $\sim$32\% of linearly probeable signal, and identified prompt wording as the primary bottleneck in multimodal ECG classification.
+\end{itemize}
+
+\section{Research Interests}
+\begin{itemize}
+  \item \textbf{Multi-omics and transcriptomic analysis} of neurological disease and cancer
+  \item \textbf{Representation learning} for biological sequences and proteins
+  \item \textbf{Multimodal biomedical machine learning} with confounder-aware, reproducible evaluation
+\end{itemize}
+
+\needspace{6\baselineskip}
+\section{Publications and Presentations}
+\begin{itemize}
+  \item Tasbir Ahmed, \textbf{Roza Akter}. ``Contrastive ECG--Report Alignment on PTB-XL: Measuring the Gap Between Learned Representations and Prompt-Based Diagnosis.'' \textit{AgIA4BioHealth Workshop, IEEE International Conference on Bioinformatics and Biomedicine (BIBM)}, 2026. \textbf{Accepted, to appear}; to be presented Dec 2026.
+\end{itemize}
+
+\needspace{8\baselineskip}
+\section{Selected Research Projects}
+\proj{NSCLC Multi-Omics Integration and Knowledge Mining}{MOFA+, GEO}{}
+\begin{itemize}
+  \item \textbf{Evaluated multi-omics integration} (RNA, methylation, CNV) with MOFA+ across 818 NSCLC patients, examining latent factor associations across tumor stages and validating factor weights on external GEO cohorts.
+  \item \textbf{Investigated whether multi-layer molecular programs capture stage-specific tumor progression better than single-omics data} by systematizing a leakage-free 7-step pipeline combining MOFA+ modeling, fold-wise feature selection, 6-resource knowledge mining and GEO factor-weight transfer.
+  \item \textbf{Diagnosed a 60\% cohort loss from RPPA inclusion}, clarified a modest bulk stage-predictive signal (CV AUROC 0.603 vs.\ 0.609 for RNA alone), and identified multi-omics-supported candidate drivers validated across clinical cohorts.
+\end{itemize}
+\proj{Toward Early Alzheimer's Risk Detection in PMOS (PCOS) Patients: A Multi-Tissue, Multi-Method Gene Expression Investigation}{Individual CSE443 research project \textbar{} DESeq2, limma, fgsea, ComBat \textbar{} \lnk{https://github.com/rozakter18/PCOS-AD-Transcriptomic-Investigation}{Code}}{2025}
+\begin{itemize}
+  \item \textbf{Evaluated individual-level Alzheimer's disease (AD) risk in PCOS patients} across multi-tissue GEO datasets using cross-platform ML classifiers and nearest-centroid metrics.
+  \item \textbf{Investigated proposed neuro-endocrine disease links} (insulin resistance, inflammation) by systematizing a pipeline across 4 GEO datasets (brain, adipose, blood) using ComBat harmonization, leakage-free 5-fold CV with fold-wise PCA, and rank-based fgsea pathway analysis.
+  \item \textbf{Diagnosed cross-platform scale mismatches causing classifier saturation}, clarified an absence of individual-level risk signal, and identified 14 immune pathways suppressed in PCOS but elevated in AD brain.
+\end{itemize}
+\proj{The Immune Cells Awake, the Network Sleeps: Rasmussen Encephalitis RNA-seq}{Solo study \textbar{} R, Salmon, tximport, DESeq2, igraph \textbar{} \lnk{https://github.com/rozakter18/Rasmussen-Encephalitis-RNAseq}{Code}}{2026}
+\begin{itemize}
+  \item \textbf{Evaluated bulk RNA-seq across Rasmussen encephalitis (RE), epilepsy and control brains}, collapsing 98 technical runs into 48 BioSamples to eliminate pseudo-replication.
+  \item \textbf{Investigated whether RE alters gene co-expression networks beyond transcript abundance} by systematizing a matched network design (controlling for gene set, edge count, sample size and permutation null) alongside Salmon quantification and Y-linked sex inference.
+  \item \textbf{Diagnosed sex-imbalance and outlier confounds in differential expression}, clarified an absence of network topology alterations ($p = 0.34$), and identified a heterogeneous cytotoxic T-cell/NK immune signature (\textit{CXCL9}, \textit{EOMES}).
+\end{itemize}
+\proj{Benchmarking Transformer Positional Encodings on CRISPR Periodicity}{Single-author study \textbar{} PyTorch, NCBI \textbar{} \lnk{https://github.com/rozakter18/CRISPR-Positional-Encoding-Benchmark}{Code}}{2026}
+\begin{itemize}
+  \item \textbf{Evaluated four transformer positional encodings} (Sinusoidal, Learned, RoPE, ALiBi) on nucleotide-level CRISPR classification, examining phase-locked boundary error patterns.
+  \item \textbf{Investigated whether relative encodings outperform absolute ones on periodic sequences} by systematizing a controlled dataset split across 18 genomes (1,773 units) via 8-mer similarity clustering and equalized training budgets.
+  \item \textbf{Diagnosed an 8--10 nt boundary lag} (37--48\% of errors), showed that uncalibrated pipelines distort relative gains by up to 0.28 MCC, and clarified that absolute Sinusoidal and relative RoPE perform equivalently.
+\end{itemize}
+
+
+\proj{Know Thy (Nearest) Neighbor: Retrieval-Augmented Annotation of a Neglected Parasite's Dark Proteome}{Solo project \textbar{} Python, ESM-2, FAISS, Qwen2.5 \textbar{} \lnk{https://github.com/rozakter18/Protein-RAG-Functional-Annotation}{Code}}{2026}
+\begin{itemize}
+  \item \textbf{Evaluated a retrieval-augmented generation (RAG) framework for protein function prediction}, coupling ESM-2 embeddings (650M parameters) with FAISS vector retrieval and Qwen2.5-7B grounded synthesis on \textit{Leishmania donovani} sequences.
+  \item \textbf{Investigated the 32.7\% uncharacterized ``dark proteome'' of visceral leishmaniasis} by systematizing a 5-stage pipeline across 8,887 proteins with ``All-but-the-Top'' anisotropy correction (removing the top 15 PCs), fact-injected LLM prompts and length-ratio filtering ($\le 3\times$).
+  \item \textbf{Diagnosed classifier and anisotropy pathologies}, restoring monotonic score calibration (20\% to 98.6\%), clarified tandem gene expansion vs.\ hubness artifacts, and identified 119 validated, high-confidence functional predictions for dark parasite proteins.
+\end{itemize}
+
+\section{Technical Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Programming} & Python, R, C, C++, SQL \\
+\textbf{Bioinformatics} & Salmon, tximport, DESeq2, limma, fgsea, ComBat, MOFA+, igraph, RNA-seq, differential expression, co-expression networks, pathway analysis, Code: \lnk{https://rosalind.info/users/roza18/}{Rosalind} \\
+\textbf{Machine learning} & PyTorch, scikit-learn, Transformers, ESM-2, FAISS, contrastive learning, transfer learning, multimodal learning, retrieval-augmented generation \\
+\end{tabularx}
+
+\end{document}
